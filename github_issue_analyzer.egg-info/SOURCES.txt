@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+github_issue_analyzer/__init__.py
+github_issue_analyzer/fetch_github_issues.py
+github_issue_analyzer.egg-info/PKG-INFO
+github_issue_analyzer.egg-info/SOURCES.txt
+github_issue_analyzer.egg-info/dependency_links.txt
+github_issue_analyzer.egg-info/entry_points.txt
+github_issue_analyzer.egg-info/requires.txt
+github_issue_analyzer.egg-info/top_level.txt

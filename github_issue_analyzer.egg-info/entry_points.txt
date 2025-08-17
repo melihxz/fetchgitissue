@@ -1,0 +1,2 @@
+[console_scripts]
+github-issue-analyzer = github_issue_analyzer.fetch_github_issues:main

@@ -1,0 +1,85 @@
+# GitHub Issue Analyzer
+
+A comprehensive tool to fetch and analyze GitHub issues from any public repository. This script provides detailed summaries of issues and identifies potential duplicates, inconsistencies, and unaddressed errors.
+
+## Features
+
+- Fetches all open and closed issues from a GitHub repository
+- Summarizes each issue in 2-3 sentences while preserving technical details
+- Extracts all comments for each issue
+- Highlights potential duplicates based on title similarity
+- Identifies inconsistencies (e.g., conflicting labels)
+- Detects potentially unaddressed errors (e.g., old open issues)
+- Categorizes issues into bugs, documentation, and coding errors
+- Organizes output clearly by issue number
+
+## Requirements
+
+- Python 3.6+
+- `requests` library
+
+## Installation
+
+1. Clone this repository or download the script files
+2. Create a virtual environment (recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+```bash
+python fetch_github_issues.py <owner> <repo> [token]
+```
+
+### Parameters
+
+- `owner` - GitHub username or organization name
+- `repo` - Repository name
+- `token` - (Optional) GitHub personal access token for higher rate limits
+
+### Examples
+
+```bash
+# Analyze issues from a public repository
+python fetch_github_issues.py octocat Spoon-Knife
+
+# Analyze issues with authentication (recommended for large repositories)
+python fetch_github_issues.py octocat Spoon-Knife your_github_token
+```
+
+## Output
+
+The script generates a comprehensive report with:
+
+1. **Issues by Number** - Detailed summaries of each issue
+2. **Potential Duplicates** - Issues with similar titles
+3. **Potential Inconsistencies** - Issues with conflicting labels
+4. **Potentially Unaddressed Errors** - Old open issues
+5. **Categorized Issues** - Grouped by bug, documentation, and coding errors
+
+## Rate Limiting
+
+GitHub API has rate limits:
+- 60 requests per hour for unauthenticated requests
+- 5000 requests per hour for authenticated requests
+
+For repositories with many issues, use a GitHub personal access token to avoid hitting rate limits.
+
+To generate a token:
+1. Go to GitHub Settings > Developer settings > Personal access tokens
+2. Generate a new token with `public_repo` scope
+3. Use it as the third parameter when running the script
+
+## Privacy
+
+This script only reads public information from GitHub repositories and does not modify any data.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
