@@ -1,0 +1,3 @@
+venv/
+github_issue_analyzer.egg-info/
+*/__pycache__/
